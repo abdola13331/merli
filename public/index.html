@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marco Bellucci — Designer & Developer</title>
+    <meta name="description" content="Portfolio of Marco Bellucci, a designer and developer crafting digital experiences.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #0a0a0a;
+            color: #e5e5e5;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        .noise {
+            position: fixed; inset: 0; z-index: 0; pointer-events: none; opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+        }
+        .gradient-blur {
+            position: fixed; width: 600px; height: 600px; border-radius: 50%;
+            filter: blur(120px); opacity: 0.12; pointer-events: none; z-index: 0;
+        }
+        .gb-1 { top: -200px; right: -100px; background: #6366f1; }
+        .gb-2 { bottom: -250px; left: -150px; background: #ec4899; }
+        main {
+            position: relative; z-index: 1;
+            max-width: 720px; margin: 0 auto; padding: 100px 24px 80px;
+        }
+        .tag {
+            display: inline-block; padding: 6px 14px;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 999px; font-size: 0.75rem; font-weight: 500;
+            color: #a1a1aa; letter-spacing: 0.05em; text-transform: uppercase;
+            margin-bottom: 28px;
+        }
+        h1 {
+            font-size: clamp(2.2rem, 5vw, 3.4rem); font-weight: 600;
+            line-height: 1.15; letter-spacing: -0.03em;
+            background: linear-gradient(135deg, #fff 0%, #a1a1aa 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+        }
+        .subtitle {
+            font-size: 1.1rem; line-height: 1.7; color: #71717a;
+            max-width: 540px; margin-bottom: 48px;
+        }
+        .links { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 80px; }
+        .links a {
+            padding: 10px 22px; border-radius: 8px; font-size: 0.875rem;
+            font-weight: 500; text-decoration: none; transition: all 0.2s;
+        }
+        .links .primary {
+            background: #fff; color: #0a0a0a;
+        }
+        .links .primary:hover { background: #e5e5e5; }
+        .links .secondary {
+            background: rgba(255,255,255,0.06); color: #d4d4d8;
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+        .links .secondary:hover { background: rgba(255,255,255,0.1); }
+        .section-title {
+            font-size: 0.75rem; font-weight: 500; text-transform: uppercase;
+            letter-spacing: 0.1em; color: #52525b; margin-bottom: 24px;
+            padding-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+        .project {
+            padding: 20px 0; border-bottom: 1px solid rgba(255,255,255,0.04);
+            display: flex; justify-content: space-between; align-items: baseline;
+            gap: 16px; transition: opacity 0.2s;
+        }
+        .project:hover { opacity: 0.7; }
+        .project-name { font-weight: 500; font-size: 0.95rem; color: #e5e5e5; }
+        .project-desc { font-size: 0.85rem; color: #71717a; margin-top: 4px; }
+        .project-year { font-size: 0.8rem; color: #52525b; white-space: nowrap; }
+        .contact-section { margin-top: 80px; }
+        .contact-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
+        }
+        .contact-card {
+            padding: 20px; border-radius: 12px;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.05);
+            text-decoration: none; color: #a1a1aa;
+            font-size: 0.875rem; transition: all 0.2s;
+        }
+        .contact-card:hover {
+            background: rgba(255,255,255,0.06);
+            border-color: rgba(255,255,255,0.1);
+            color: #e5e5e5;
+        }
+        .contact-card .label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; color: #52525b; margin-bottom: 8px; }
+        footer {
+            text-align: center; padding: 60px 24px 40px;
+            font-size: 0.75rem; color: #3f3f46;
+            position: relative; z-index: 1;
+        }
+        @media (max-width: 500px) {
+            .contact-grid { grid-template-columns: 1fr; }
+            .project { flex-direction: column; gap: 4px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="noise"></div>
+    <div class="gradient-blur gb-1"></div>
+    <div class="gradient-blur gb-2"></div>
+
+    <main>
+        <span class="tag">Available for work</span>
+        <h1>I design and build things for the web.</h1>
+        <p class="subtitle">
+            Product designer and frontend developer based in Milan.
+            I help startups and agencies ship beautiful, fast interfaces
+            that people actually enjoy using.
+        </p>
+
+        <div class="links">
+            <a href="mailto:hello@marcobellucci.dev" class="primary">Get in touch</a>
+            <a href="https://github.com" class="secondary" target="_blank">GitHub</a>
+            <a href="https://linkedin.com" class="secondary" target="_blank">LinkedIn</a>
+        </div>
+
+        <div>
+            <div class="section-title">Selected Projects</div>
+            <div class="project">
+                <div>
+                    <div class="project-name">Lucid — SaaS Dashboard</div>
+                    <div class="project-desc">Analytics platform with real-time data visualization</div>
+                </div>
+                <span class="project-year">2025</span>
+            </div>
+            <div class="project">
+                <div>
+                    <div class="project-name">Noma — E-Commerce</div>
+                    <div class="project-desc">Headless storefront for a sustainable fashion brand</div>
+                </div>
+                <span class="project-year">2025</span>
+            </div>
+            <div class="project">
+                <div>
+                    <div class="project-name">Terrace — Booking App</div>
+                    <div class="project-desc">Restaurant reservation system with table management</div>
+                </div>
+                <span class="project-year">2024</span>
+            </div>
+            <div class="project">
+                <div>
+                    <div class="project-name">Glint — Design System</div>
+                    <div class="project-desc">Component library and tokens for a fintech startup</div>
+                </div>
+                <span class="project-year">2024</span>
+            </div>
+        </div>
+
+        <div class="contact-section">
+            <div class="section-title">Contact</div>
+            <div class="contact-grid">
+                <a href="mailto:hello@marcobellucci.dev" class="contact-card">
+                    <div class="label">Email</div>
+                    hello@marcobellucci.dev
+                </a>
+                <a href="https://twitter.com" class="contact-card" target="_blank">
+                    <div class="label">Twitter / X</div>
+                    @mbellucci
+                </a>
+                <a href="https://dribbble.com" class="contact-card" target="_blank">
+                    <div class="label">Dribbble</div>
+                    marcobellucci
+                </a>
+                <a href="https://read.cv" class="contact-card" target="_blank">
+                    <div class="label">Resume</div>
+                    read.cv/marco
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2025 Marco Bellucci. Built with care.
+    </footer>
+</body>
+</html>
